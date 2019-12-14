@@ -1,0 +1,16 @@
+$mainFont: "Source Sans Pro", sans-serif;
+$auxFont: "Fresca", sans-serif;
+$mainFontColor: #fff;
+$headBg: url("../img/m-h-night.jpg") no-repeat;
+$backgroundColors: (
+  body: #21232e,
+  card: #3b3f50,
+  banner: linear-gradient(90deg, #dea405 0%, #963250 100%),
+  footer: #3b3f50,
+  word: #ff4e33,
+  btn: #e3ac00
+);
+$firstCardTextWidth: 340px;
+$secondCardTextWidth: 340px;
+$thirdCardTextWidth: 320px;
+$lineHeightCardText: 16px;

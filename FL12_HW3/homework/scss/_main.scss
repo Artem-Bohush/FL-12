@@ -1,0 +1,304 @@
+@mixin btn {
+  color: #fff;
+  width: 110px;
+  height: 37px;
+  background-color: map-get($backgroundColors, btn);
+  border-radius: 3px;
+  border: none;
+  font-weight: 600;
+}
+@mixin link {
+  font-family: "Source Sans Pro", sans-serif;
+  color: #fff;
+  display: block;
+  font-weight: 600;
+}
+@mixin logoBlock {
+  display: flex;
+  align-items: center;
+  img {
+    height: 35px;
+  }
+  p {
+    width: 60px;
+    text-align: center;
+    line-height: 18px;
+    padding-top: 10px;
+    color: $mainFontColor;
+    font-family: $auxFont;
+    font-size: 20px;
+    margin-left: 8px;
+    font-weight: 600;
+    span {
+      display: block;
+      text-align: center;
+      font-size: 8px;
+    }
+  }
+}
+@mixin wordBg {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  background: map-get($backgroundColors, word);
+  z-index: 1;
+}
+@mixin word {
+  display: block;
+  position: absolute;
+  z-index: 2;
+  bottom: 0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $mainFont;
+  position: relative;
+  color: $mainFontColor;
+  background-color: map-get($backgroundColors, body);
+  .header {
+    height: 580px;
+    background: $headBg;
+    background-size: cover;
+    background-position: 0 -210px;
+    border-radius: 0px 0px 40% 0px;
+    &-wrap {
+      width: 1200px;
+      margin: 0 auto;
+      padding-top: 10px;
+      .landing-logo {
+        @include logoBlock;
+      }
+      .header_heading {
+        width: 400px;
+        font-size: 58px;
+        font-weight: bold;
+        margin-top: 65px;
+        line-height: 60px;
+        position: relative;
+        z-index: 5;
+        &::before {
+          @include word;
+          content: "awesome";
+          left: 0;
+        }
+        &::after {
+          @include wordBg;
+          @extend .header_heading::before;
+          width: 243px;
+          height: 40px;
+          bottom: 2px;
+          left: 0;
+        }
+      }
+      .header_text {
+        width: 500px;
+        font-size: 13px;
+        font-family: $auxFont;
+        margin-top: 43px;
+      }
+      div {
+        &:nth-child(4) {
+          display: flex;
+          justify-content: space-between;
+          width: 380px;
+          align-items: center;
+          margin-top: 44px;
+          .header_button {
+            @include btn;
+          }
+          .login {
+            @include link;
+          }
+        }
+      }
+    }
+  }
+  .section {
+    position: relative;
+    padding-bottom: 217px;
+    &_text {
+      color: $mainFontColor;
+      height: 96px;
+      width: 320px;
+      margin: 0 auto;
+      line-height: 96px;
+      font-size: 32px;
+      font-weight: 600;
+      position: relative;
+      &::after {
+        @include wordBg;
+        width: 146px;
+        height: 38px;
+        bottom: 34px;
+        right: 11px;
+      }
+      &:before {
+        @include word;
+        content: "adventure!";
+        right: 2px;
+      }
+    }
+    &_card_wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .section_card {
+        width: 857px;
+        background-color: map-get($backgroundColors, card);
+        padding: 15px;
+        border-radius: 5px;
+        &:nth-child(n + 2) {
+          margin-top: 20px;
+        }
+        &:nth-child(1) {
+          height: 250px;
+          .section_card_heading {
+            margin-top: 36px;
+          }
+          .section_card_text {
+            margin-top: 31px;
+            width: $firstCardTextWidth;
+          }
+          .section_link {
+            margin-top: 12px;
+          }
+        }
+        &:nth-child(2) {
+          height: 240px;
+          .section_card_heading {
+            margin-top: 35px;
+          }
+          .section_card_text {
+            margin-top: 27px;
+            width: $secondCardTextWidth;
+          }
+          .section_link {
+            margin-top: 8px;
+          }
+        }
+        &:nth-child(3) {
+          height: 264px;
+          .section_card_heading {
+            margin-top: 45px;
+          }
+          .section_card_text {
+            margin-top: 47px;
+            width: $thirdCardTextWidth;
+          }
+          .section_link {
+            margin-top: 20px;
+          }
+        }
+        &_img {
+          float: left;
+          height: 100%;
+          border-radius: 5px;
+        }
+        &_right_container {
+          width: 360px;
+          float: left;
+          margin-left: 70px;
+          color: #bfc2cc;
+          .section_card_heading {
+            text-align: center;
+            font-size: 20px;
+            font-weight: 600;
+            color: #fff;
+          }
+          .section_card_text {
+            font-family: $auxFont;
+            text-align: justify;
+            font-size: 12px;
+            line-height: $lineHeightCardText;
+          }
+          .section_link {
+            @include link;
+            color: #bfc2cc;
+            font-size: 12px;
+            text-align: center;
+          }
+        }
+      }
+    }
+    &_banner {
+      width: 920px;
+      height: 110px;
+      border-radius: 5px;
+      background: map-get($backgroundColors, banner);
+      padding: 0 125px 0 125px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: absolute;
+      bottom: -55px;
+      left: 50%;
+      transform: translateX(-50%);
+      &_text_wrap {
+        .section_banner_heading {
+          font-size: 24px;
+          font-weight: bold;
+          position: relative;
+          &::after {
+            @include wordBg;
+            width: 52px;
+            height: 38px;
+            left: 95px;
+          }
+          &:before {
+            @include word;
+            content: "start";
+            left: 97px;
+          }
+        }
+        .section_banner_text {
+          color: #c0c3ba;
+          font-size: 13px;
+          margin-top: 13px;
+          margin-bottom: 15px;
+          font-family: $auxFont;
+        }
+      }
+      &_button {
+        @include btn;
+      }
+    }
+  }
+  .footer {
+    font-family: $auxFont;
+    height: 186px;
+    background-color: map-get($backgroundColors, footer);
+    width: 100%;
+    padding-top: 100px;
+    &-wrap {
+      display: flex;
+      justify-content: space-between;
+      width: 1180px;
+      margin: 0 auto;
+      .footer_logo.landing-logo {
+        @include logoBlock;
+        p {
+          color: #c0c3ba;
+        }
+      }
+      .footer_text {
+        width: 220px;
+        color: #c0c3ba;
+        font-size: 10px;
+        margin-top: 5px;
+      }
+      .footer-cr {
+        display: block;
+        font-size: 12px;
+        color: #c0c3ba;
+        line-height: 48px;
+      }
+    }
+  }
+}

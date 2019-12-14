@@ -1,0 +1,16 @@
+$mainFont: "Source Sans Pro", sans-serif;
+$auxFont: "Hind", sans-serif;
+$mainFontColor: #2c2f3c;
+$headBg: url("../img/m-h-day.jpg") no-repeat;
+$backgroundColors: (
+  body: #fff,
+  card: #21232e,
+  banner: linear-gradient(90deg, #65950d 0%, #2d5bd9 100%),
+  footer: #21232e,
+  word: #14a0c7,
+  btn: #699900
+);
+$firstCardTextWidth: 100%;
+$secondCardTextWidth: 350px;
+$thirdCardTextWidth: 340px;
+$lineHeightCardText: 19px;
