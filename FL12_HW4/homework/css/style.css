@@ -184,13 +184,7 @@ body .section-post-text {
 body .section-post-btn {
   display: block;
   background-color: #fff;
-  border: none;
-  width: 125px;
-  height: 35px;
-  border-radius: 17px;
-  text-transform: uppercase;
   color: #777;
-  font-size: 9px;
   letter-spacing: 1px;
   font-weight: bold;
   cursor: pointer;
