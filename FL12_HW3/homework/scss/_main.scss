@@ -102,6 +102,9 @@ body {
         font-size: 13px;
         font-family: $auxFont;
         margin-top: 43px;
+        white-space: pre;
+        text-align: left;
+        margin-left: -50px;
       }
       div {
         &:nth-child(4) {
