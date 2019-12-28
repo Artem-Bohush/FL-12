@@ -4,7 +4,6 @@ const loggedUsers = {
 };
 const cancelInput = ['', null];
 
-//Step 1. Check login
 let email = prompt('Please enter an email:');
 if (cancelInput.includes(email)) {
   alert('Canceled');
@@ -13,12 +12,10 @@ if (cancelInput.includes(email)) {
     alert('I don\'t know any emails having name length less than 5 symbols');
   } else if (email === 'user@gmail.com' || email === 'admin@gmail.com') {
     let password = prompt('Please enter a password:');
-    //Step 2. Check password:
     if (cancelInput.includes(password)) {
       alert('Canceled');
     } else {
       if (password === loggedUsers[email]) {
-        //Step 3. Change the password
         if (!confirm('Do you want to change your password?')) {
           alert('You have failed the change');
         } else {
@@ -50,4 +47,3 @@ if (cancelInput.includes(email)) {
     alert('I don’t know you');
   }
 }
-
