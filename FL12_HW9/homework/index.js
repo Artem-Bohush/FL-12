@@ -13,9 +13,6 @@ console.log(convert('1', 2, 3, '4'));// [1, '2', '3', 4]
 //------------------------------------------2---------------------------------------------
 
 function executeforEach(arr, func) {
-  // for (let item of arr) {
-  //   func(item);
-  // }
   for (let i = 0; i < arr.length; i++) {
     func(+arr[i])
   }
@@ -31,7 +28,6 @@ function mapArray(arr, func) {
   for (let i = 0; i < arr.length; i++) {
     arr[i] = func(+arr[i])
   }
-  // executeforEach(arr, func)
   return arr;
 }
 
