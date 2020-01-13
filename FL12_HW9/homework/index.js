@@ -12,9 +12,9 @@ console.log(convert('1', 2, 3, '4'));// [1, '2', '3', 4]
 
 //------------------------------------------2---------------------------------------------
 
-function executeforEach(arr, func) {
+function executeforEach(arr, callback) {
   for (let i = 0; i < arr.length; i++) {
-    func(+arr[i])
+    arr[i] = callback(arr[i]);
   }
 }
 
@@ -24,10 +24,11 @@ executeforEach([1, 2, 3], function (el) {
 
 //------------------------------------------3---------------------------------------------
 
-function mapArray(arr, func) {
+function mapArray(arr, callback) {
   for (let i = 0; i < arr.length; i++) {
-    arr[i] = func(+arr[i])
+    arr[i] = +arr[i];
   }
+  executeforEach(arr, callback)
   return arr;
 }
 
@@ -37,14 +38,19 @@ console.log(mapArray([2, '5', 8], function (el) {
 
 //------------------------------------------4---------------------------------------------
 
-function filterArray(arr, func) {
-  const outArr = [];
+function filterArray(arr, callback) {
+  const copyArr = [];
   for (let item of arr) {
-    if (func(item)) {
-      outArr.push(item)
+    copyArr.push(item);
+  }
+  executeforEach(copyArr, callback);
+  const filteredArr = [];
+  for (let i = 0; i < copyArr.length; i++) {
+    if (copyArr[i] === true) {
+      filteredArr.push(arr[i]);
     }
   }
-  return outArr;
+  return filteredArr;
 }
 
 console.log(filterArray([2, 5, 8], function (el) {
@@ -87,11 +93,14 @@ const actors = [
 ];
 
 function getArrayOfKeys(arr, key) {
-  const valuesArr = [];
-  for (let obj of arr) {
-    valuesArr.push(obj[key]);
+  const copyArr = [];
+  for (let item of arr) {
+    copyArr.push(item)
   }
-  return valuesArr;
+  executeforEach(copyArr, function (el) {
+    return el[key]
+  })
+  return copyArr;
 }
 
 console.log(getArrayOfKeys(actors, 'name')); // [‘tommy’, ‘lee’]
@@ -99,14 +108,14 @@ console.log(getArrayOfKeys(actors, 'name')); // [‘tommy’, ‘lee’]
 //------------------------------------------8---------------------------------------------
 
 function substitute(arr) {
-  const outArr = [];
+  const copyArr = [];
   for (let item of arr) {
-    if (item < 30) {
-      item = '*';
-    }
-    outArr.push(item)
+    copyArr.push(item);
   }
-  return outArr;
+  mapArray(copyArr, (el) => {
+    return el < 30 ? '*' : el;
+  })
+  return copyArr;
 }
 
 console.log(substitute([58, 14, 48, 2, 31, 29])); // [58, '*', 48, '*', 31, '*']
