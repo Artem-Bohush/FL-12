@@ -97,7 +97,7 @@ function getArrayOfKeys(arr, key) {
   for (let item of arr) {
     copyArr.push(item)
   }
-  executeforEach(copyArr, function (el) {
+  executeforEach(copyArr, el => {
     return el[key]
   })
   return copyArr;
@@ -112,7 +112,7 @@ function substitute(arr) {
   for (let item of arr) {
     copyArr.push(item);
   }
-  mapArray(copyArr, (el) => {
+  mapArray(copyArr, el => {
     return el < 30 ? '*' : el;
   })
   return copyArr;
