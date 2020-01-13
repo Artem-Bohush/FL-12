@@ -85,7 +85,6 @@ console.log(makeListFromRange([2, 7])); // [2, 3, 4, 5, 6, 7]
 
 //------------------------------------------7---------------------------------------------
 
-
 const actors = [
   { name: 'tommy', age: 36 },
   { name: 'lee', age: 28 }
@@ -131,7 +130,7 @@ console.log(getPastDay(date, 2)); // 31, (31 Dec 2018)
 console.log(getPastDay(date, 365)); // 2, (2 Jan 2018)
 
 //------------------------------------------10---------------------------------------------
-//YYYY/M/d HH:mm
+
 function formatDate(date) {
   const hours = date.getHours() < 10 ? '0' + date.getHours() : date.getHours();
   const minutes = date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes();
@@ -140,7 +139,3 @@ function formatDate(date) {
 
 console.log(formatDate(new Date('6/15/2018 09:15:00'))); // "2018/6/15 09:15"
 console.log(formatDate(new Date())); // "2020/1/7 12:56" // gets current local time
-
-
-// -	Using built–in array or object methods(besides push, length and date methods)
-// -	Using built–in string methods (except parseInt)
