@@ -1,0 +1,60 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#root {
+  padding-top: 30px;
+  padding-left: 30px;
+  width: 400px;
+}
+
+#root li {
+  cursor: pointer;
+}
+
+#root li.empty {
+  cursor: default;
+}
+
+.folder {
+  list-style: none;
+  padding-left: 20px;
+  font-size: 17px;
+}
+
+.folder .folder-title {
+  display: flex;
+  align-items: center;
+}
+
+.folder .folder-title:hover {
+  background-color: #efefef;
+}
+
+.file {
+  list-style: none;
+  padding-left: 20px;
+  display: flex;
+  align-items: center;
+  font-size: 17px;
+}
+
+.file:hover {
+  background-color: #efefef;
+}
+
+.empty {
+  list-style: none;
+  padding-left: 35px;
+  font-style: italic;
+}
+
+.material-icons.fol {
+  color: #edbc0b;
+}
+
+.material-icons.fil {
+  color: #bbbbbb;
+}
