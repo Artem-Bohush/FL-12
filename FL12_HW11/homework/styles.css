@@ -14,13 +14,9 @@
   cursor: pointer;
 }
 
-#root li.empty {
-  cursor: default;
-}
-
 .folder {
   list-style: none;
-  padding-left: 20px;
+  padding-left: 15px;
   font-size: 17px;
 }
 
@@ -35,10 +31,15 @@
 
 .file {
   list-style: none;
-  padding-left: 20px;
+  padding-left: 15px;
   display: flex;
   align-items: center;
   font-size: 17px;
+}
+
+.file .file-title {
+  display: flex;
+  align-items: center;
 }
 
 .file:hover {
@@ -47,7 +48,7 @@
 
 .empty {
   list-style: none;
-  padding-left: 35px;
+  padding-left: 10px;
   font-style: italic;
 }
 
