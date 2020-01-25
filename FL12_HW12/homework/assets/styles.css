@@ -1,0 +1,99 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1030px;
+  padding: 0 15px 0 15px;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.header .buttons {
+  display: flex;
+  align-items: center;
+}
+
+.header .buttons button {
+  cursor: pointer;
+
+}
+
+.header .buttons button:nth-child(n +2) {
+  margin-left: 10px;
+}
+
+.content .existed-sets {
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.content .existed-sets .set-card {
+  cursor: pointer;
+  position: relative;
+}
+
+.content .existed-sets .set-card:hover {
+  background-color: rgb(247, 240, 240);
+}
+
+.content .existed-sets .set-card:nth-child(n + 2) {
+  margin-top: 10px;
+}
+
+.set-card .edit-set-btn {
+  cursor: pointer;
+}
+
+.set-card .remove-set-btn {
+  cursor: pointer;
+}
+
+.content .new-set-fields {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.content .new-set-fields .terms-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.content .new-set-fields .terms-group .remove-btn {
+  width: 60px;
+  margin-top: 5px;
+}
+
+.content .edit-set-fields {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.studied::before {
+  content: "";
+  background-color: rgba(0, 0, 0, .7);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.studied::after {
+  content: "Studied";
+  color: #fff;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
