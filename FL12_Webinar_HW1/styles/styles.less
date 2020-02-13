@@ -1,0 +1,38 @@
+@import "./variables";
+@import "./module.less";
+
+* {
+  box-sizing: border-box;
+}
+
+.navbar {
+  .navbar-brand {
+    img {
+      cursor: pointer;
+    }
+  }
+
+  .navbar-toggler {
+    margin: 8px 0;
+  }
+
+  .nav-item {
+    padding: 8px 0;
+
+    &:hover {
+      background-color: @blue;
+    }
+
+    .nav-link {
+      color: @grey;
+
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
+}
+
+.bg-grey {
+  background-color: @grey;
+}
