@@ -57,11 +57,23 @@ regroupObject(oldObj);
 
 // ----------------------------Task5----------------------------------
 
-function findUniqueElements(arr) {
-  const uniqueElements = new Set();
-  arr.forEach(el => uniqueElements.add(el));
-  return Array.from(uniqueElements);
-}
+// function findUniqueElements(arr) {
+//   const uniqueElements = new Set();
+//   arr.forEach(el => uniqueElements.add(el));
+//   return Array.from(uniqueElements);
+// }
 
-const array = [1, 1, 23, 3, 4, 5, 6, 5, 4, 23, 2, 1, 1, 1, 1, 1];
-console.log(findUniqueElements(array));
+// const array = [1, 1, 23, 3, 4, 5, 6, 5, 4, 23, 2, 1, 1, 1, 1, 1];
+// console.log(findUniqueElements(array));
+
+// ----------------------------Task6----------------------------------
+
+// function hideNumber(str) {
+//   const lastNumStr = str.split('').splice(-4).join('');
+//   return lastNumStr.padStart(10, '*');
+// }
+
+// const phoneNumber = '0123456789';
+// console.log(hideNumber(phoneNumber));
+
+// ----------------------------Task7----------------------------------
