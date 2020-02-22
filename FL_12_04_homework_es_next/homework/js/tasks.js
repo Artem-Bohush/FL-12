@@ -20,3 +20,17 @@
 // console.log(copiedArray === array);
 
 // ----------------------------Task3----------------------------------
+
+// function addUniqueId(obj) {
+//   const enhancedObj = {};
+//   let rand = 1 + Math.random() * (1000 + 1 - 1);
+//   enhancedObj[Symbol('uniqueId')] = Math.floor(rand);
+//   return Object.assign(enhancedObj, obj);
+// }
+
+// const testObj = { name: 123 };
+// const enhancedObj = addUniqueId(testObj);
+
+// console.log(testObj === enhancedObj);
+// console.log(testObj);
+// console.log(enhancedObj);
