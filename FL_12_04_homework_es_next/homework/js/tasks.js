@@ -77,3 +77,17 @@ regroupObject(oldObj);
 // console.log(hideNumber(phoneNumber));
 
 // ----------------------------Task7----------------------------------
+
+// function add(a = alarm(), b = alarm()) {
+//   return a + b;
+// }
+
+// function alarm() {
+//   throw new Error('Missing property')
+// }
+
+// console.log(add(1, 3));
+// console.log(add(1));
+
+// ----------------------------Task8----------------------------------
+
