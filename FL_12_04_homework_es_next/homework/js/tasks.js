@@ -104,6 +104,8 @@ regroupObject(oldObj);
 // }
 // getNames1(url).then(data => console.log(data));
 
+// ----------------------------Task9----------------------------------
+
 // async function getNames2(url) {
 //   try {
 //     const response = await fetch(url);
@@ -116,5 +118,3 @@ regroupObject(oldObj);
 //   }
 // }
 // getNames2(url).then(data => console.log(data));
-
-// ----------------------------Task9----------------------------------
