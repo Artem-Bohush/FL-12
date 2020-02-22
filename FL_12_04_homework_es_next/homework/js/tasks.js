@@ -91,3 +91,30 @@ regroupObject(oldObj);
 
 // ----------------------------Task8----------------------------------
 
+// let url = 'https://jsonplaceholder.typicode.com/users';
+
+// function getNames1(url) {
+//   return fetch(url)
+//     .then(response => response.json())
+//     .then(usersArr => {
+//       const onlyNames = usersArr.map(userData => userData.username);
+//       return onlyNames.sort();
+//     })
+//     .catch(error => console.log(`ERROR: ${error.stack}`));
+// }
+// getNames1(url).then(data => console.log(data));
+
+// async function getNames2(url) {
+//   try {
+//     const response = await fetch(url);
+//     const usersArr = await response.json();
+//     const onlyNames = usersArr.map(userData => userData.username);
+//     return onlyNames.sort();
+//   }
+//   catch (e) {
+//     console.log(`ERROR: ${e}`);
+//   }
+// }
+// getNames2(url).then(data => console.log(data));
+
+// ----------------------------Task9----------------------------------
