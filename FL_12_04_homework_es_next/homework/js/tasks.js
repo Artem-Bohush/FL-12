@@ -36,24 +36,29 @@
 // console.log(enhancedObj);
 
 // ----------------------------Task4----------------------------------
-/*
-function regroupObject(obj) {
-  const regroupedObj = {};
-  const {name, id, age, university } = obj;
-  console.log(name, age);
-}
 
-const oldObj = {
-  name: 'Someone',
-  details: {
-    id: 1,
-    age: 21,
-    university: 'UNI'
-  }
-}
+// function regroupObject(obj) {
+//   const newObj = {};
+//   const {id, age, university } = obj.details;
+//   newObj.university = university;
+//   newObj.user = {
+//     age,
+//     firstName: obj.name,
+//     id
+//   }
+//   return newObj;
+// }
 
-regroupObject(oldObj);
-*/
+// const oldObj = {
+//   name: 'Someone',
+//   details: {
+//     id: 1,
+//     age: 21,
+//     university: 'UNI'
+//   }
+// }
+
+// console.log(regroupObject(oldObj));
 
 // ----------------------------Task5----------------------------------
 
