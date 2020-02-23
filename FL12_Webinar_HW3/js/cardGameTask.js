@@ -1,148 +1,3 @@
-// ---------------------------------------------- ES5 -------------------------------------------------
-
-// function Deck() {
-//   let _cards = createCards();
-//   let _count = _cards.length;
-
-//   this.shuffle = function () {
-//     let randIndex;
-//     let temp;
-//     for (let i = 0; i < 3; i++) {
-//       for (let j = _cards.length - 1; j > 0; j--) {
-//         randIndex = Math.floor(Math.random() * (j + 1));
-//         temp = _cards[randIndex];
-//         _cards[randIndex] = _cards[j];
-//         _cards[j] = temp;
-//       }
-//     }
-//   }
-
-//   this.draw = function (n) {
-//     _count -= n;
-//     return _cards.splice(_cards.length - n, n)[0];
-//   }
-
-//   this.getCount = function () {
-//     return _count;
-//   }
-
-//   this.getCards = function () {
-//     return _cards;
-//   }
-
-//   function createCards() {
-//     const suits = ['Hearts', 'Diamonds', 'Clubs', 'Spades'];
-//     const cards = [];
-//     for (let i = 0; i < 4; i++) {
-//       for (let j = 0; j < 13; j++) {
-//         cards.push(new Card(suits[i], j + 1));
-//       }
-//     }
-//     return cards;
-//   }
-// }
-
-// function Card(suit, rank) {
-//   const _suit = suit;
-//   const _rank = rank;
-//   const _isFaceCard = (_rank === 1 || _rank > 10) ? true : false;
-//   const _rankInfo = {
-//     1: 'Ace',
-//     2: 2,
-//     3: 3,
-//     4: 4,
-//     5: 5,
-//     6: 6,
-//     7: 7,
-//     8: 8,
-//     9: 9,
-//     10: 10,
-//     11: 'Jack',
-//     12: 'Queen',
-//     13: 'King'
-//   }
-
-//   this.toString = function () {
-//     console.log(`${_rankInfo[_rank]} of ${_suit}`);
-//   }
-
-//   this.compare = function (cardTwo) {
-//     if (_rank > cardTwo.getRank()) {
-//       return 1;
-//     } else if (_rank < cardTwo.getRank()) {
-//       return -1;
-//     } else {
-//       return 0;
-//     }
-//   }
-
-//   this.getIsFaceCard = function () {
-//     return _isFaceCard;
-//   }
-
-//   this.getRank = function () {
-//     return _rank;
-//   }
-// }
-
-// function Player(name, deck) {
-//   let _name = name;
-//   let _deck = deck;
-//   let _wins = 0;
-
-//   this.play = function (playerTwo) {
-// if (!_deck.getCount()) {
-//   console.log('The deck is empty!');
-//   return;
-// }
-// _deck.shuffle();
-// playerTwo.getDeck().shuffle();
-// while (_deck.getCount() !== 0) {
-//   let card1 = _deck.draw(1);
-//   let card2 = playerTwo.getDeck().draw(1);
-//   let compareResult = card1.compare(card2);
-//   if (compareResult > 0) {
-//     _wins++;
-//   } else if (compareResult < 0) {
-//     playerTwo.addPoint();
-//   }
-// }
-// if (_wins > playerTwo.getWins()) {
-//   console.log(`${_name} wins ${_wins} to ${playerTwo.getWins()}`);
-// } else if (_wins < playerTwo.getWins()) {
-//   console.log(`${playerTwo.getName()} wins ${playerTwo.getWins()} to ${_wins}`);
-// } else {
-//   console.log('The game ended in a draw!');
-// }
-//   }
-
-//   this.getDeck = function () {
-//     return _deck;
-//   }
-
-//   this.addPoint = function () {
-//     _wins += 1;
-//   }
-
-//   this.getWins = function () {
-//     return _wins;
-//   }
-
-//   this.getName = function () {
-//     return _name;
-//   }
-// }
-
-// const deck1 = new Deck();
-// const deck2 = new Deck();
-
-
-// const player1 = new Player('Pete', deck1);
-// const player2 = new Player('John', deck2);
-
-// player1.play(player2);
-
-
 // ---------------------------------------------- ES6 -------------------------------------------------
 
 const _cards = Symbol('cards');
@@ -233,13 +88,13 @@ class Card {
   }
 
   static compare(cardOne, cardTwo) {
-    if (cardOne.rank > cardTwo.rank) {
-      return 1;
-    } else if (cardOne.rank < cardTwo.rank) {
-      return -1;
-    } else {
-      return 0;
-    }
+if (cardOne.rank > cardTwo.rank) {
+  return 1;
+} else if (cardOne.rank < cardTwo.rank) {
+  return -1;
+} else {
+  return 0;
+}
   }
 }
 
@@ -300,7 +155,151 @@ class Player {
 const deck1 = new Deck();
 const deck2 = new Deck();
 
-const player1 = new Player('Pete', deck1);
-const player2 = new Player('John', deck2);
+const pete = new Player('Pete', deck1);
+const john = new Player('John', deck2);
 
-// Player.play(player1, player2);
+Player.play(pete, john);
+
+// ---------------------------------------------- ES5 -------------------------------------------------
+
+// function Deck() {
+//   let _cards = createCards();
+//   let _count = _cards.length;
+
+//   this.shuffle = function () {
+//     let randIndex;
+//     let temp;
+//     for (let i = 0; i < 3; i++) {
+//       for (let j = _cards.length - 1; j > 0; j--) {
+//         randIndex = Math.floor(Math.random() * (j + 1));
+//         temp = _cards[randIndex];
+//         _cards[randIndex] = _cards[j];
+//         _cards[j] = temp;
+//       }
+//     }
+//   }
+
+//   this.draw = function (n) {
+//     _count -= n;
+//     return _cards.splice(_cards.length - n, n)[0];
+//   }
+
+//   this.getCount = function () {
+//     return _count;
+//   }
+
+//   this.getCards = function () {
+//     return _cards;
+//   }
+
+//   function createCards() {
+//     const suits = ['Hearts', 'Diamonds', 'Clubs', 'Spades'];
+//     const cards = [];
+//     for (let i = 0; i < 4; i++) {
+//       for (let j = 0; j < 13; j++) {
+//         cards.push(new Card(suits[i], j + 1));
+//       }
+//     }
+//     return cards;
+//   }
+// }
+
+// function Card(suit, rank) {
+//   const _suit = suit;
+//   const _rank = rank;
+//   const _isFaceCard = (_rank === 1 || _rank > 10) ? true : false;
+//   const _rankInfo = {
+//     1: 'Ace',
+//     2: 2,
+//     3: 3,
+//     4: 4,
+//     5: 5,
+//     6: 6,
+//     7: 7,
+//     8: 8,
+//     9: 9,
+//     10: 10,
+//     11: 'Jack',
+//     12: 'Queen',
+//     13: 'King'
+//   }
+
+//   this.toString = function () {
+//     console.log(`${_rankInfo[_rank]} of ${_suit}`);
+//   }
+
+//   this.getIsFaceCard = function () {
+//     return _isFaceCard;
+//   }
+
+//   this.getRank = function () {
+//     return _rank;
+//   }
+// }
+
+// Card.compare = function (cardOne, cardTwo) {
+//   if (cardOne.getRank() > cardTwo.getRank()) {
+//     return 1;
+//   } else if (cardOne.getRank() < cardTwo.getRank()) {
+//     return -1;
+//   } else {
+//     return 0;
+//   }
+// }
+
+// function Player(name, deck) {
+//   let _name = name;
+//   let _deck = deck;
+//   let _wins = 0;
+
+//   this.getDeck = function () {
+//     return _deck;
+//   }
+
+//   this.addPoint = function () {
+//     _wins += 1;
+//   }
+
+//   this.getWins = function () {
+//     return _wins;
+//   }
+
+//   this.getName = function () {
+//     return _name;
+//   }
+// }
+
+// Player.play = function (playerOne, playerTwo) {
+//   if (!playerOne.getDeck().getCount()) {
+//     console.log('The deck is empty!');
+//     return;
+//   }
+//   playerOne.getDeck().shuffle();
+//   playerTwo.getDeck().shuffle();
+//   while (playerOne.getDeck().getCount() !== 0) {
+//     let card1 = playerOne.getDeck().draw(1);
+//     let card2 = playerTwo.getDeck().draw(1);
+//     let compareResult = Card.compare(card1, card2);
+//     if (compareResult > 0) {
+//       playerOne.addPoint();
+//     } else if (compareResult < 0) {
+//       playerTwo.addPoint();
+//     }
+//   }
+//   if (playerOne.getWins() > playerTwo.getWins()) {
+//     console.log(`${playerOne.getName()} wins ${playerOne.getWins()} to ${playerTwo.getWins()}`);
+//   } else if (playerOne.getWins() < playerTwo.getWins()) {
+//     console.log(`${playerTwo.getName()} wins ${playerTwo.getWins()} to ${playerOne.getWins()}`);
+//   } else {
+//     console.log('The game ended in a draw!');
+//   }
+// }
+
+// const deck1 = new Deck();
+// const deck2 = new Deck();
+
+
+// const pete = new Player('Pete', deck1);
+// const john = new Player('John', deck2);
+
+// Player.play(pete, john);
