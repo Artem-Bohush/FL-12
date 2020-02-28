@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Users</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="users-block">
+      <div class="users-block-content"></div>
+    </div>
+  </div>
+
+  <div class="modal">
+    <div class="modal-body">
+      <form action="#" id="new-data">
+        <fieldset class="user-data">
+          <input type="hidden" name="id">
+
+          <label for="nameInp">Name:</label>
+          <input type="text" id="nameInp" name="name">
+
+          <label for="usernameInp">Username:</label>
+          <input type="text" id="usernameInp" name="username">
+
+          <label for="emailInp">Email:</label>
+          <input type="text" id="emailInp" name="email" rows="3">
+
+          <label for="addressInp">Address(separate by comma):</label>
+          <input type="text" id="addressInp" name="address">
+
+          <label for="phoneInp">Phone:</label>
+          <input type="text" id="phoneInp" name="phone">
+
+          <label for="websiteInp">Website:</label>
+          <input type="text" id="websiteInp" name="website">
+
+          <label for="companyInp">Company:</label>
+          <input type="text" id="companyInp" name="company">
+        </fieldset>
+        <fieldset class="form-action">
+          <button class="form-submit">Submit</button>
+          <button class="form-close">Close</button>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+
+  <div class="spinner">
+    <div class="lds-dual-ring"></div>
+  </div>
+
+  <script src="./js/script.js"></script>
+</body>
+
+</html>
