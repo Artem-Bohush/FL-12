@@ -1,0 +1,174 @@
+.game {
+  padding-top: 10px;
+  &-title {
+    text-align: center;
+  }
+
+  &-process {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .game-symbols {
+      padding-top: 15px;
+      p {
+        text-align: center;
+      }
+
+      .btn-group {
+        padding-top: 15px;
+        padding-bottom: 15px;
+        button {
+          position: relative;
+          width: 110px;
+          height: 25px;
+          cursor: pointer;
+          &:nth-child(n + 2) {
+            margin-left: 10px;
+          }
+        }
+
+        .rock {
+          &:before {
+            position: absolute;
+            content: "";
+            display: block;
+            width: 18px;
+            height: 18px;
+            bottom: 1px;
+            right: 5px;
+            background-image: url("../img/svg/stone-icon.svg");
+            background-size: contain;
+          }
+          &:after {
+            position: absolute;
+            content: "";
+            display: block;
+            width: 18px;
+            height: 18px;
+            bottom: 1px;
+            left: 5px;
+            background-image: url("../img/svg/stone-icon.svg");
+            background-size: contain;
+          }
+        }
+
+        .paper {
+          &:before {
+            position: absolute;
+            content: "";
+            display: block;
+            width: 18px;
+            height: 18px;
+            bottom: 1px;
+            right: 5px;
+            background-image: url("../img/svg/paper-icon.svg");
+            background-size: contain;
+          }
+          &:after {
+            position: absolute;
+            content: "";
+            display: block;
+            width: 18px;
+            height: 18px;
+            bottom: 1px;
+            left: 5px;
+            background-image: url("../img/svg/paper-icon.svg");
+            background-size: contain;
+          }
+        }
+
+        .scissors {
+          &:before {
+            position: absolute;
+            content: "";
+            display: block;
+            width: 18px;
+            height: 18px;
+            bottom: 1px;
+            right: 5px;
+            background-image: url("../img/svg/scissors-icon.svg");
+            background-size: contain;
+            transform: rotate(90deg);
+          }
+          &:after {
+            position: absolute;
+            content: "";
+            display: block;
+            width: 18px;
+            height: 18px;
+            bottom: 1px;
+            left: 5px;
+            background-image: url("../img/svg/scissors-icon.svg");
+            background-size: contain;
+            transform: rotate(90deg);
+          }
+        }
+      }
+    }
+  }
+
+  .reset {
+    cursor: pointer;
+    width: 70px;
+    height: 25px;
+    position: relative;
+    text-align: start;
+    padding-left: 5px;
+    &:after {
+      position: absolute;
+      content: "";
+      display: block;
+      width: 15px;
+      height: 15px;
+      bottom: 3px;
+      right: 5px;
+      background-image: url("../img/svg/reset-icon.svg");
+      background-size: contain;
+    }
+  }
+
+  .step-result {
+    padding-top: 10px;
+    position: relative;
+    min-width: 300px;
+    min-height: 90px;
+    #loader {
+      margin: 10px;
+      position: absolute;
+      top: 15px;
+      left: 0;
+      width: 300px;
+      height: 60px;
+      display: none;
+      img {
+        display: block;
+        width: 60px;
+        margin: 0 auto;
+      }
+    }
+    p {
+      &:nth-child(n + 2) {
+        margin-top: 5px;
+      }
+    }
+  }
+
+  .final-result {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10px;
+    h3 {
+      text-align: center;
+    }
+
+    .result-img {
+      margin-top: 10px;
+      width: 500px;
+      img {
+        width: 100%;
+      }
+    }
+  }
+}

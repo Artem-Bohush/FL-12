@@ -1,0 +1,27 @@
+.rules {
+  padding: 20px 0 10px 0;
+  border-bottom: 1px solid #8cb841;
+  p {
+    font-style: 18px;
+  }
+
+  ul {
+    list-style: none;
+    padding: 15px 0 0 30px;
+    li {
+      position: relative;
+      &::before {
+        position: absolute;
+        left: -13px;
+        bottom: 5px;
+        content: "";
+        display: block;
+        color: black;
+        width: 12px;
+        height: 12px;
+        background-image: url("../img/svg/right-arrow.svg");
+        background-size: contain;
+      }
+    }
+  }
+}
