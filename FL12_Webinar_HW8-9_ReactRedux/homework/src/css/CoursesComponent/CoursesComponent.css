@@ -1,0 +1,6 @@
+.courses {
+  padding: 20px 0;
+}
+
+@import './Panel.css';
+@import './CoursesList.css';
