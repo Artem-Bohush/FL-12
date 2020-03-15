@@ -1,0 +1,10 @@
+<app-loader *ngIf="loading"></app-loader>
+
+<ul class="list" *ngIf="!loading">
+  <app-list-item 
+    *ngFor="let user of _usersService.users | usersSearch: _usersService.searchStr"
+    [user]="user"
+  ></app-list-item>
+
+  <p class="no-users" *ngIf="!_usersService.users.length">No users</p>
+</ul>

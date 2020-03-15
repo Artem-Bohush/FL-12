@@ -1,0 +1,53 @@
+<li class="list-item" [class.invalid-form]="invalidUserData">
+  <ul *ngIf="!editForm; else formTemplate">
+    <li class="list-item-name"> {{user.name}} </li>
+    <li class="list-item-email"> {{user.email}} </li>
+    <li class="list-item-phone"> {{user.phone}} </li>
+    <li class="list-item-btns">
+      <button class="delete-btn" (click)="deleteUser()">Delete</button>
+      <button class="edit-btn" (click)="showEditForm()">Edit</button>
+    </li>
+  </ul>
+</li>
+
+<ng-template #formTemplate>
+  <form [formGroup]="userDataForm" (submit)="saveEditedUserData()">
+    <ul>
+      <li class="list-item-name">
+        <input 
+        type="text" 
+        name="name" 
+        formControlName="name"
+        (input)="inputtingNewName($event.target.value)"
+        >
+      </li>
+      <li class="list-item-email">
+        <input 
+        type="text" 
+        name="email" 
+        formControlName="email"
+        (input)="inputtingNewEmail($event.target.value)"
+        >
+      </li>
+      <li class="list-item-phone">
+        <input 
+        type="text" 
+        name="phone" 
+        formControlName="phone"
+        (input)="inputtingNewPhone($event.target.value)"
+        >
+      </li>
+      <li class="list-item-btns">
+        <button class="save-btn" 
+        [class.disabled-btn]="invalidUserData"
+        [disabled]="invalidUserData"
+        type="submit"
+        >Save</button>
+        <button class="discard-btn" 
+        (click)="discardEditing()"
+        type="reset"
+        >Discard</button>
+      </li>
+    </ul>
+  </form>
+</ng-template>
