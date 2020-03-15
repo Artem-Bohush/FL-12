@@ -1,4 +1,4 @@
-# FL12WebinarHW1011Angular
+# FL12_Webinar_HW10_Angular_1
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.6.
 
