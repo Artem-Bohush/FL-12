@@ -1,0 +1,22 @@
+.list-form {
+  display: flex;
+  justify-content: space-between;
+  height: 30px;
+  margin-bottom: 15px;
+
+  .search-inp {
+    width: 83%;
+    border: none;
+    border-radius: 8px;
+    padding-left: 10px;
+  }
+
+  .add-btn {
+    width: 16%;
+    margin-left: 1%;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    background-color: #08B0DA;
+  }
+}

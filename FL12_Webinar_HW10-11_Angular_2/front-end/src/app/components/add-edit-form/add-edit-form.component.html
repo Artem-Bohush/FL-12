@@ -1,0 +1,43 @@
+<div class="bg">
+  <form class="form" [formGroup]="userDataForm">
+    <h2 class="form-title">{{ formTitle }}</h2>
+    <button class="back-btn" (click)="goBack()">&larr;</button>
+
+    <label for="name">Name<span class="asterisk">&#10059;</span></label>
+    <input type="text" name="name" id="name" 
+    formControlName="name"
+    (input)="inputtingUserData($event.target)"
+    [class.invalid-name]="invalidName">
+
+    <label for="email">Email<span class="asterisk">&#10059;</span></label>
+    <input type="text" name="email" id="email"
+    formControlName="email"
+    (input)="inputtingUserData($event.target)"
+    [class.invalid-email]="invalidEmail">
+
+    <label for="phone">Phone<span class="asterisk">&#10059;</span></label>
+    <input type="text" name="phone" id="phone"
+    formControlName="phone"
+    (input)="inputtingUserData($event.target)"
+    [class.invalid-phone]="invalidPhone">
+
+    <label for="address">Address</label>
+    <input type="text" name="address" id="address"
+    formControlName="address"
+    (input)="inputtingUserData($event.target)">
+
+    <label for="website">Website</label>
+    <input type="text" name="website" id="website"
+    formControlName="website"
+    (input)="inputtingUserData($event.target)">
+
+    <div class="form-actions">
+      <button class="save-btn" 
+      (click)="save()"
+      [class.disabled-btn]="invalidName || invalidEmail || invalidPhone"
+      [disabled]="invalidName || invalidEmail || invalidPhone"
+      >Save</button>
+      <button class="discard-btn" (click)="discard()">Discard</button>
+    </div>
+  </form>
+</div>

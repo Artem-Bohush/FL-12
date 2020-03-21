@@ -1,0 +1,10 @@
+<app-loader *ngIf="loading"></app-loader>
+
+<ul class="list" *ngIf="!loading">
+  <app-list-item 
+    *ngFor="let user of usersService.users"
+    [user]="user"
+  ></app-list-item>
+
+  <p class="no-users" *ngIf="!usersService.users.length">No users</p>
+</ul>
