@@ -1,0 +1,38 @@
+.pools-list {
+  padding-top: 40px;
+  padding-left: 350px;
+}
+
+.pool {
+  list-style: none;
+}
+
+.pool .pool-name {
+  font-weight: bold;
+  font-size: 17px;
+}
+
+.pool .pool-details {
+  padding: 5px 0 5px 20px;
+  font-size: 16px;
+}
+
+.pool .pool-employees {
+  display: none;
+  font-size: 14px;
+  padding-left: 50px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.pool .pool-employees.show {
+  display: block;
+}
+
+.show-employee-li {
+  cursor: pointer;
+}
+
+.show-employee-li:hover {
+  text-decoration: underline;
+}

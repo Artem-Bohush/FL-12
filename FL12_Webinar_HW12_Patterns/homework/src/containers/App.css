@@ -1,0 +1,39 @@
+.container {
+  max-width: 930px;
+  margin: 0 auto;
+}
+
+nav {
+  background-color: #BBCDE0;
+  box-shadow: 0 0 10px rgba(0,0,0,.5);
+  height: 60px;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  height: 60px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.menu li {
+  font-size: 18px;
+  width: 25%;
+  text-align: center;
+  padding-top: 18px;
+}
+
+.menu li.active-tab {
+  background-color: rgb(170, 195, 221);
+}
+
+.menu li a {
+  text-decoration: none;
+  color: rgb(13, 90, 153);
+}
+
+.menu li a:hover {
+  text-decoration: underline;
+}
