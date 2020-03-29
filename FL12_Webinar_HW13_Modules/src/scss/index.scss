@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700&display=swap');
+@import './home.scss';
+@import './game.scss';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  background-color: #D3E0EC;
+}
+
+.container {
+  max-width: 1030px;
+  padding: 0 15px;
+  margin: 0 auto;
+}

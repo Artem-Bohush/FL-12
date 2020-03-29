@@ -1,0 +1,221 @@
+@mixin strike-line {
+  position: absolute;
+  content: "";
+  display: block;
+  border: 3px solid #ca3625;
+  z-index: 10;
+}
+
+.game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 30px;
+
+  &-info {
+    max-width: 310px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+
+    .player-name {
+      max-width: 38%;
+      background-color: #d3e0ec;
+      border: none;
+      border-bottom: 1px solid #a8b8c9;
+      font-size: 14px;
+      color: rgb(54, 54, 54);
+
+      &:focus {
+        outline: none;
+        border-bottom: 1px solid rgb(119, 119, 119);
+      }
+
+      &:nth-child(3) {
+        text-align: right;
+      }
+    }
+
+    .highlighted-player {
+      font-weight: bold;
+      text-decoration: underline;
+    }
+
+    .score {
+      max-width: 24%;
+      color: #1B1B5A;
+    }
+  }
+
+  &-grid {
+    display: grid;
+    grid-template-columns: 100px 100px 100px;
+    grid-template-rows: 100px 100px 100px;
+    grid-gap: 5px 5px;
+    background-color: #a8b8c9;
+    border: 3px solid #a8b8c9;
+    margin: 20px 0;
+    position: relative;
+
+    .field {
+      background-color: #dfecf9;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .cross {
+      &::before {
+        content: "";
+        display: block;
+        width: 100px;
+        height: 100px;
+        left: 35px;
+        bottom: 33px;
+        transform: rotate(45deg);
+        border-bottom: 3px solid rgb(41, 41, 136);
+        position: absolute;
+      }
+
+      &::after {
+        content: "";
+        display: block;
+        width: 100px;
+        height: 100px;
+        left: -38px;
+        bottom: 34px;
+        transform: rotate(45deg);
+        border-right: 3px solid rgb(41, 41, 136);
+        position: absolute;
+      }
+    }
+
+    .circle {
+      &::before {
+        content: "";
+        display: block;
+        width: 70px;
+        height: 70px;
+        left: 50%;
+        bottom: 50%;
+        transform: translate(-50%, 50%);
+        border: 3px solid rgb(90, 90, 204);
+        border-radius: 50%;
+        position: absolute;
+      }
+    }
+  }
+
+  .game-over-0 {
+    &::before {
+      @include strike-line;
+      width: 300px;
+      left: 50%;
+      top: 48px;
+      transform: translateX(-50%);
+    }
+  }
+
+  .game-over-1 {
+    &::before {
+      @include strike-line;
+      width: 300px;
+      left: 50%;
+      bottom: 49%;
+      transform: translateX(-50%);
+    }
+  }
+
+  .game-over-2 {
+    &::before {
+      @include strike-line;
+      width: 300px;
+      left: 50%;
+      bottom: 46px;
+      transform: translateX(-50%);
+    }
+  }
+
+  .game-over-3 {
+    &::before {
+      @include strike-line;
+      height: 300px;
+      left: 46px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+  .game-over-4 {
+    &::before {
+      @include strike-line;
+      height: 300px;
+      left: 152px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+  .game-over-5 {
+    &::before {
+      @include strike-line;
+      height: 300px;
+      left: 257px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+  .game-over-6 {
+    &::before {
+      @include strike-line;
+      height: 380px;
+      left: 150px;
+      top: -38px;
+      transform: translateY(-50%);
+      transform: rotate(-45deg);
+      background-color: #ca3625;
+    }
+  }
+
+  .game-over-7 {
+    &::before {
+      @include strike-line;
+      height: 380px;
+      left: 152px;
+      top: -38px;
+      transform: translateY(-50%);
+      transform: rotate(45deg);
+      background-color: #ca3625;
+    }
+  }
+
+  &-message {
+    height: 24px;
+    color: green;
+  }
+
+  &-control {
+    min-width: 200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    button {
+      border: 2px solid #a8b8c9;
+      height: 30px;
+      width: 90px;
+      border-radius: 10px;
+      color: rgb(36, 36, 119);
+
+      &:hover {
+        cursor: pointer;
+        background-color: #d3e0ec;
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}
